@@ -8,7 +8,7 @@
     <Summary>Providing a few useful features that we use for C# all over the place.</Summary>
     <Title>SharpSanity</Title>
     <Description>Providing a few useful features that we use for C# all over the place.</Description>
-    <ReleaseVersion>1.0.0</ReleaseVersion>
+    <ReleaseVersion>1.0.1</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
 
