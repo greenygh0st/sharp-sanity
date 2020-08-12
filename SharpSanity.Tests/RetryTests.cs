@@ -44,5 +44,24 @@ namespace SharpSanity.Tests
                 Assert.True(true);
             }
         }
+
+        [Fact]
+        public async Task ThrowsInvalidArgument()
+        {
+            try
+            {
+                await Retry.GoAsync(async () =>
+                {
+                    bool isABool = await RandomFail.WillItFailAsync(); // odds are 1 in 5 :)
+
+                    Assert.True(isABool);
+
+                }, TimeSpan.FromMilliseconds(500), -1); // values less that or equal to zero should make it fail
+            }
+            catch (Exception)
+            {
+                Assert.True(true);
+            }
+        }
     }
 }
