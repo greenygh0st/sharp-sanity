@@ -6,6 +6,11 @@ namespace SharpSanity.Linq
 {
     public static class ListChunkBy
     {
+        /// <summary>
+        /// Chunks a list into sizes of a specifc type
+        /// </summary>
+        /// <param name="chunkSize">How big should each chunk be?</param>
+        /// <returns></returns>
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
         {
             return source

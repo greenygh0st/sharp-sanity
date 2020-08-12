@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SharpSanity.Retry
+namespace SharpSanity.FaultTolerance
 {
     public static class Retry
     {
-        public static async Task DoAsync(Func<Task> action, TimeSpan sleepPeriod, int tryCount = 3)
+        public static async Task GoAsync(Func<Task> action, TimeSpan sleepPeriod, int tryCount = 5)
         {
+            List<Exception> exceptions = new List<Exception>();
+
             if (tryCount <= 0)
                 throw new ArgumentOutOfRangeException(nameof(tryCount));
 
@@ -18,12 +21,16 @@ namespace SharpSanity.Retry
                 try
                 {
                     await action();
-                    return; // success!
+                    return;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    // keep a list of all the exceptions (cause they might be different)
+                    exceptions.Add(ex);
+
+                    // if we have run out of tries then error out
                     if (--tryCount == 0)
-                        throw;
+                        throw new AggregateException(exceptions);
 
                     await Task.Delay(TimeSpan.FromMilliseconds(sleepPeriod.TotalMilliseconds * attempts));
                 }
