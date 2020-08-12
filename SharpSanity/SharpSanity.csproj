@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Dale Myszewski &lt;dale@bubblelabs.dev&gt;</Authors>
+    <Copyright>Bubble Labs</Copyright>
+    <Owners>Dale Myszewski &lt;dale@bubblelabs.dev&gt;</Owners>
+    <Summary>Providing a few useful features that we use for C# all over the place.</Summary>
+    <Title>SharpSanity</Title>
+    <Description>Providing a few useful features that we use for C# all over the place.</Description>
   </PropertyGroup>
 
 </Project>
