@@ -32,11 +32,51 @@ namespace SharpSanity.Tests
         }
 
         [Fact]
-        public void MedIsFourDouble()
+        public void MedIsFourishDoubleOdd()
         {
             List<double> numRange = new List<double> { 1.3, 4.2, 6 };
             double med = SaneMath.Median(numRange);
             Assert.Equal(4.2, med);
+        }
+
+        [Fact]
+        public void MedIsFourishDoubleEven()
+        {
+            List<double> numRange = new List<double> { 1.3, 4.2, 6, 9 };
+            double med = SaneMath.Median(numRange);
+            Assert.Equal(5.1, med);
+        }
+
+        [Fact]
+        public void MedIsFourishDoubleOddArray()
+        {
+            double[] numRange = new double[] { 1.3, 4.2, 6 };
+            double med = SaneMath.Median(numRange);
+            Assert.Equal(4.2, med);
+        }
+
+        [Fact]
+        public void MedIsFourishDoubleEvenArray()
+        {
+            double[] numRange = new double[] { 1.3, 4.2, 6, 9 };
+            double med = SaneMath.Median(numRange);
+            Assert.Equal(5.1, med);
+        }
+
+        [Fact]
+        public void MedDecimalArrayEven()
+        {
+            int[] numRange = new int[] { 1, 2, 3, 4 };
+            decimal med = SaneMath.Median(numRange);
+            Assert.Equal(2.5M, med);
+        }
+
+        [Fact]
+        public void MedDecimalArrayOdd()
+        {
+            int[] numRange = new int[] { 1, 2, 3 };
+            decimal med = SaneMath.Median(numRange);
+            Assert.Equal(2, med);
         }
     }
 }

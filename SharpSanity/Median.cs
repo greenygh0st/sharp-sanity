@@ -19,7 +19,7 @@ namespace SharpSanity
                 // count is even, need to get the middle two elements, add them together, then divide by 2
                 int middleElement1 = tempArray[(count / 2) - 1];
                 int middleElement2 = tempArray[(count / 2)];
-                medianValue = (middleElement1 + middleElement2) / 2;
+                medianValue = ((decimal)middleElement1 + (decimal)middleElement2) / 2;
             }
             else
             {
