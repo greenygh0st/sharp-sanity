@@ -35,7 +35,7 @@ jobs:
       with:
         # Filepath of the project to be packaged, relative to root of repository
         PROJECT_FILE_PATH: SharpSanity/SharpSanity.csproj
-        VERSION_REGEX: <ReleaseVersion>(.*)<\/ReleaseVersion>
+        VERSION_REGEX: <PackageVersion>(.*)<\/PackageVersion>
         # Format of the git tag, [*] gets replaced with actual version
         TAG_FORMAT: v*
         # API key to authenticate with NuGet server
