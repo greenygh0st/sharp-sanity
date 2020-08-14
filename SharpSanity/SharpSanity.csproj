@@ -10,6 +10,7 @@
     <Description>Providing a few useful features that we use for C# all over the place.</Description>
     <ReleaseVersion>1.0.1</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
 </Project>
