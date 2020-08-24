@@ -13,6 +13,14 @@ namespace SharpSanity.Linq
         /// <returns></returns>
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
         {
+            // we get less that zero throw outofrange exception
+            if (chunkSize < 0)
+                throw new ArgumentOutOfRangeException("chunkSize", "Chunk size must be zero or greater");
+
+            // If we get a zero for the chunk size
+            if (chunkSize == 0)
+                chunkSize = 1;
+
             return source
                 .Select((x, i) => new { Index = i, Value = x })
                 .GroupBy(x => x.Index / chunkSize)
