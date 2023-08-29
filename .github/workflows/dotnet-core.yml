@@ -48,4 +48,4 @@ jobs:
     - name: publish on version change
       run: |
         package_path=$(ls ./SharpSanity/bin/Release/SharpSanity.*.nupkg)
-        dotnet nuget push $package_path --api-key "${{secrets.NUGET_KEY}}" --source "nuget.org"
+        dotnet nuget push $package_path --api-key "${{secrets.NUGET_KEY}}" --source "nuget.org" --skip-duplicate
