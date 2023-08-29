@@ -38,6 +38,8 @@ jobs:
         file: ./SharpSanity.Tests/TestResults/**/coverage.cobertura.xml
     - name: Pack
       run: dotnet pack --configuration Release
+    - name: File test
+      run: ls -l ./
     # Publish
     - name: publish on version change
       run: |
