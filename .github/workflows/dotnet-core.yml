@@ -40,10 +40,12 @@ jobs:
         file: ./SharpSanity.Tests/TestResults/**/coverage.cobertura.xml
     - name: Pack
       run: dotnet pack --configuration Release
-    #- name: File test
-    #  run: ls -l ./SharpSanity
+    - name: File test
+      run: ls -l ./SharpSanity/bin/Release
+    - name: Package Path Test
+      run: ls ./SharpSanity/bin/Release/SharpSanity.*.nupkg
     # Publish
     - name: publish on version change
       run: |
-        package_path=$(./SharpSanity/bin/Release/SharpSanity.*.nupkg)
+        package_path=$(ls ./SharpSanity/bin/Release/SharpSanity.*.nupkg)
         dotnet nuget push $package_path --api-key "${{secrets.NUGET_KEY}}"
