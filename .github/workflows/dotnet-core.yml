@@ -39,7 +39,7 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release
     - name: File test
-      run: ls -l ./
+      run: ls -l ./SharpSanity
     # Publish
     - name: publish on version change
       run: |
