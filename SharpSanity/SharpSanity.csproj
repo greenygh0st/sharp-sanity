@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Authors>Dale Myszewski &lt;dale@bubblelabs.dev&gt;</Authors>
     <Copyright>Bubble Labs</Copyright>
     <Owners>Dale Myszewski &lt;dale@bubblelabs.dev&gt;</Owners>
     <Summary>Providing a few useful features that we use for C# all over the place.</Summary>
     <Title>SharpSanity</Title>
     <Description>Providing a few useful features that we use for C# all over the place.</Description>
-    <ReleaseVersion>1.5.0</ReleaseVersion>
+    <ReleaseVersion>1.6.0</ReleaseVersion>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <PackageVersion>1.5.0</PackageVersion>
+    <PackageVersion>1.6.0</PackageVersion>
   </PropertyGroup>
 
 </Project>
