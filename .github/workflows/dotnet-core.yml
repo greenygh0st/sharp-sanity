@@ -40,8 +40,6 @@ jobs:
         file: ./SharpSanity.Tests/TestResults/**/coverage.cobertura.xml
     - name: Pack
       run: dotnet pack --configuration Release
-    - name: File test
-      run: ls -l ./SharpSanity/bin/Release
     - name: Package Path Test
       run: ls ./SharpSanity/bin/Release/SharpSanity.*.nupkg
     # Publish
